@@ -8,23 +8,12 @@
  * Happy coding! 🚀
  */
 
-// class EmailService {
-//     sendEmail(message: string): void {
-//         console.log(`Sending email with message: ${message}`);
-//     }
-// }
+import { SendNotification } from "./SendNotification";
+import { EmailService } from "./services/EmailService";
+import { SMSService } from "./services/SMSService";
 
-// class SendNotification {
-//     private emailService: EmailService;
+const emailNotification = new SendNotification(new EmailService);
+emailNotification.sendNotification("Hello, this is a notification!");
 
-//     constructor() {
-//         this.emailService = new EmailService();
-//     }
-
-//     sendNotification(message: string): void {
-//         this.emailService.sendEmail(message);
-//     }
-// }
-
-// const notification = new SendNotification();
-// notification.sendNotification("Hello, this is a notification!");
+const smsNotification = new SendNotification(new SMSService);
+smsNotification.sendNotification("Hello, this is a notification!");
