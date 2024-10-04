@@ -14,6 +14,10 @@ export class Library {
     getListBooks(): Book[] {
         return this.books;
     }
+    
+    getTotalNumberOfBooks(): number {
+        return this.books.length;
+    }
 
     removeBook(title: string): void {
         this.books = this.books.filter(book => book.title !== title);

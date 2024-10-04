@@ -10,11 +10,7 @@ export class BookSearch {
     getBookByTitle(title: string): Book | undefined {
         return this.books.find(book => book.title === title);
     }
-
-    getTotalNumberOfBooks(): number {
-        return this.books.length;
-    }
-
+    
     getBooksByAuthor(author: string): Book[] {
         return this.books.filter(book => book.author === author);
     }
