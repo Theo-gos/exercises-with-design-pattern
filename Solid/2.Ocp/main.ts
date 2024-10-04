@@ -14,7 +14,8 @@ import { Rectangle } from "./shapes/Rectangle";
 import { Shape } from "./shapes/Shapes";
 import { Square } from "./shapes/Square";
 import { Triangle } from "./shapes/Triangle";
-import { FullTime } from "./employees/Fulltime";
+
+import { FullTime } from "./employees/FullTime";
 import { Intern } from "./employees/Intern";
 import { PartTime } from "./employees/PartTime";
 import { Freelancer } from "./employees/Freelancer";
