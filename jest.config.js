@@ -7,9 +7,9 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     collectCoverage: true,
     collectCoverageFrom: [
-        'Solid/**/*.ts',
-        '!Solid/**/*.d.ts',
-        '!Solid/**/*/main.ts'
+        'Solid/4.Lsp/**/*.ts',
+        '!Solid/4.Lsp/**/*.d.ts',
+        '!Solid/4.Lsp/main.ts'
     ],
     coverageDirectory: 'coverage',
     coverageReporters: ['json', 'lcov', 'text', 'clover'],
