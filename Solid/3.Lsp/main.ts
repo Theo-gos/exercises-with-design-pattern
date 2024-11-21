@@ -1,3 +1,8 @@
+import { IOnlinePaymentProcessor } from "./interfaces/IOnlinePaymentProcessor";
+import { CreditCardPayment } from "./CreditCardPayment";
+import { PayPalPayment } from "./PayPalPayment";
+import { CashPayment } from "./CashPayment";
+
 /**
  * *****************************************
  * 📝 UNCOMMENT THE PRACTICE SECTION CODE YOU WANT BELOW AND START YOUR SOLUTION
@@ -7,43 +12,15 @@
  * Uncomment them to start implementing your solution.
  * Happy coding! 🚀
  */
+function handleOnlinePayment(paymentProcessor: IOnlinePaymentProcessor, amount: number): void {
+    paymentProcessor.processPayment(amount);
+}
 
-// class PaymentProcessor {
-//     processPayment(amount: number): void {
-//         console.log(`Processing payment of $${amount}`);
-//     }
-// }
-// class CreditCardPayment extends PaymentProcessor {
-//     processPayment(amount: number): void {
-//         console.log(`Processing credit card payment of $${amount}`);
-//         console.log("Validating credit card details...");
-//         console.log("Charging the credit card...");
-//     }
-// }
+const creditCardPayment = new CreditCardPayment();
+handleOnlinePayment(creditCardPayment, 100); // Output: Processed payment successfully
 
-// class PayPalPayment extends PaymentProcessor {
-//     processPayment(amount: number): void {
-//         console.log(`Processing PayPal payment of $${amount}`);
-//         console.log("Redirecting to PayPal...");
-//         console.log("Completing PayPal transaction...");
-//     }
-// }
-// class CashPayment extends PaymentProcessor {
-//     processPayment(amount: number): void {
-//         console.log(`Processing cash payment of $${amount}`);
-//         throw new Error("Cannot process cash payment online!");
-//     }
-// }
+const payPalPayment = new PayPalPayment();
+handleOnlinePayment(payPalPayment, 200); // Output: Processed payment successfully
 
-// function handlePayment(paymentProcessor: PaymentProcessor, amount: number): void {
-//     paymentProcessor.processPayment(amount);
-// }
-
-// const creditCardPayment = new CreditCardPayment();
-// handlePayment(creditCardPayment, 100); // Output: Processed payment successfully
-
-// const payPalPayment = new PayPalPayment();
-// handlePayment(payPalPayment, 200); // Output: Processed payment successfully
-
-// const cashPayment = new CashPayment();
-// handlePayment(cashPayment, 50); // Output: Error: Cannot process cash payment online!
+const cashPayment = new CashPayment();
+cashPayment.handleCashPayment(50); // Output: Accepting cash payment in person.
